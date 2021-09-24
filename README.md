@@ -15,6 +15,11 @@ For help getting started with Flutter, view our
 [online documentation](https://flutter.dev/docs), which offers tutorials,
 samples, guidance on mobile development, and a full API reference.
 
+## Git branch
+- master
+- VerticalSlides (2021.09.25)
+機能：画像が横にスライドできる
+
 ## commit rule
 
 ```
