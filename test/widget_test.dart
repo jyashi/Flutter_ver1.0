@@ -9,11 +9,12 @@ import 'package:flutter/material.dart';
 import 'package:flutter_test/flutter_test.dart';
 
 import 'package:ver1_20210924/main.dart';
+import 'package:ver1_20210924/nested_list_screen.dart';
 
 void main() {
   testWidgets('Counter increments smoke test', (WidgetTester tester) async {
     // Build our app and trigger a frame.
-    await tester.pumpWidget(const MyApp());
+    await tester.pumpWidget(NestedListScreen());
 
     // Verify that our counter starts at 0.
     expect(find.text('0'), findsOneWidget);
