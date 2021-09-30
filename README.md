@@ -17,7 +17,12 @@ samples, guidance on mobile development, and a full API reference.
 
 ## Git branch
 - master
-- VerticalSlides (2021.09.25)　　　　機能：画像が横にスライドできる
+- develop (2021.09.30)　　　　機能：Report画面
+
+## lib File
+- main.dart
+- nested_list_screen.dart       横スライド試作
+- report.dart           レポート画面試作
 
 ## commit rule
 
