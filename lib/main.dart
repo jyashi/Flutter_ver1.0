@@ -1,7 +1,11 @@
 import 'package:flutter/material.dart';
-import 'nested_list_screen.dart';
+import 'package:ver1_20210924/report.dart';
 
 void main() {
-  runApp(NestedListScreen());
+  runApp(
+      new MaterialApp(
+        home: new ReportPage(),
+      )
+  );
 }
 
