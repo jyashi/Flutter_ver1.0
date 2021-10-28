@@ -17,12 +17,17 @@ samples, guidance on mobile development, and a full API reference.
 
 ## Git branch
 - master
-- develop (2021.09.30)　　　　機能：Report画面
+- develop (2021.10.28)　　　　機能：Report画面追加機能＆Calendarからの画面遷移
 
 ## lib File
 - main.dart
-- nested_list_screen.dart       横スライド試作
-- report.dart           レポート画面試作
+- nested_list_screen.dart       横スライド試作(現在未使用)
+- report.dart           レポート画面
+- calendar.dart         カレンダー画面
+
+## json File
+- MyTrend.json      よく使った言葉
+- TodayNews.json        今日のニュース
 
 ## commit rule
 
