@@ -2,7 +2,6 @@ import 'dart:convert';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import "package:intl/intl.dart";
-import 'package:charts_flutter/flutter.dart' as charts;
 
 
 
@@ -41,10 +40,7 @@ class _ReportPageState extends State<ReportPage> {
 
   @override
   Widget build(BuildContext context) {
-    double height = MediaQuery.of(context).size.height;
     double width = MediaQuery.of(context).size.width;
-    int _currentIndex = 0;
-
     return
       Scaffold(
           // appBar: AppBar(
@@ -53,27 +49,27 @@ class _ReportPageState extends State<ReportPage> {
           body: SingleChildScrollView(
             child: Container(
               padding: const EdgeInsets.only(top: 50),
-              color: Color(0xFFefefef),
+              color: const Color(0xFFefefef),
               child: Column(
                 children: [
                   Container(
                     padding: const EdgeInsets.only(left: 25, right: 25),
                       child: Text(
                         DateFormat('yyyy年 M月 d日').format(Get.arguments),
-                        style: TextStyle(
+                        style: const TextStyle(
                           color: Color(0xFF555647),
                           fontSize: 25,
                           fontWeight: FontWeight.bold,
                         ),
                       ),
                   ),
-                  Divider(thickness: 1.5,),
-                  SizedBox(height: 10,),
+                  const Divider(thickness: 1.5,),
+                  const SizedBox(height: 10,),
                   Container(
                     padding: const EdgeInsets.only(left: 25, right: 25),
                     child: Row(
                       children: [
-                        Text(
+                        const Text(
                           "スクリーンタイム",
                           style: TextStyle(
                               color: Color(0xFF1f2326),
@@ -82,7 +78,7 @@ class _ReportPageState extends State<ReportPage> {
                           ),
                         ),
                         Expanded(child: Container()),
-                        Text(
+                        const Text(
                           "Detail",
                           style: TextStyle(
                               color: Color(0xFFffa07a),
@@ -91,23 +87,23 @@ class _ReportPageState extends State<ReportPage> {
                           ),
                         ),
 
-                        SizedBox(width: 5,),
+                        const SizedBox(width: 5,),
                         Container(
                           width: 50,
                           height: 50,
                           decoration: BoxDecoration(
                               borderRadius: BorderRadius.circular(10),
-                              color: Color(0xFFffa07a)
+                              color: const Color(0xFFffa07a)
                           ),
                           child: GestureDetector(
-                              child: Icon(
+                              child: const Icon(
                                   Icons.arrow_forward_ios, color: Colors.white)
                           ),
                         )
                       ],
                     ),
                   ),
-                  SizedBox(height: 10,),
+                  const SizedBox(height: 10,),
                   Container(
                     padding: const EdgeInsets.only(left: 25, right: 25),
                     height: 200,
@@ -117,11 +113,11 @@ class _ReportPageState extends State<ReportPage> {
                         color: Colors.white
                     ),
                   ),
-                  SizedBox(height: 20,),
+                  const SizedBox(height: 20,),
                   Container(
                     padding: const EdgeInsets.only(left: 25, right: 25),
                     alignment: Alignment.centerLeft,
-                    child: Text(
+                    child: const Text(
                       "よく使った言葉",
                       style: TextStyle(
                           color: Color(0xFF1f2326),
@@ -130,9 +126,9 @@ class _ReportPageState extends State<ReportPage> {
                       ),
                     ),
                   ),
-                  SizedBox(height: 20,),
+                  const SizedBox(height: 20,),
                   //list
-                  Container(
+                  SizedBox(
                       height: 180,
                       width: width,
                       child:   MediaQuery.removePadding(context: context,
@@ -148,14 +144,14 @@ class _ReportPageState extends State<ReportPage> {
                                   margin: const EdgeInsets.only(left: 25, right: 20, bottom: 10),
                                   decoration: BoxDecoration(
                                     borderRadius: BorderRadius.circular(20),
-                                    color:Color(0xFFdcd6d2),
+                                    color:const Color(0xFFdcd6d2),
                                   ),
                                   child: Container(
                                     padding: const EdgeInsets.only(left: 20, right: 20),
                                     alignment: Alignment.centerLeft,
                                     child: Text(
                                       MyTrend[i]['title'],
-                                      style: TextStyle(
+                                      style: const TextStyle(
                                           color:Color(0xFF1f2326),
                                           fontSize: 18,
                                           decoration: TextDecoration.none
@@ -169,12 +165,12 @@ class _ReportPageState extends State<ReportPage> {
 
                   ),
                   // _VerticalList(context, MyTrend, width, Color(0xFFe6bfb2), Color(0xFFe8d3ca)),
-                  SizedBox(height: 20,),
+                  const SizedBox(height: 20,),
                   Container(
                     padding: const EdgeInsets.only(left: 25, right: 25),
                     child: Row(
                       children: [
-                        Text(
+                        const Text(
                           "今日のニュース",
                           style: TextStyle(
                               color: Color(0xFF1f2326),
@@ -183,7 +179,7 @@ class _ReportPageState extends State<ReportPage> {
                           ),
                         ),
                         Expanded(child: Container()),
-                        Text(
+                        const Text(
                           "Detail",
                           style: TextStyle(
                               color: Color(0xFFffa07a),
@@ -192,31 +188,31 @@ class _ReportPageState extends State<ReportPage> {
                           ),
                         ),
 
-                        SizedBox(width: 5,),
+                        const SizedBox(width: 5,),
                         Container(
                           width: 50,
                           height: 50,
                           decoration: BoxDecoration(
                               borderRadius: BorderRadius.circular(10),
-                              color: Color(0xFFffa07a)
+                              color: const Color(0xFFffa07a)
                           ),
                           child: GestureDetector(
-                              child: Icon(
+                              child: const Icon(
                                   Icons.arrow_forward_ios, color: Colors.white)
                           ),
                         )
                       ],
                     ),
                   ),
-                  SizedBox(height: 10,),
+                  const SizedBox(height: 10,),
                   //list
-                  _VerticalList(context, TodayTopics, width, Color(0xFF8fbc8f), Color(0xFF54917f)),
-                  SizedBox(height: 20,),
+                  _VerticalList(context, TodayTopics, width, const Color(0xFF8fbc8f), const Color(0xFF54917f)),
+                  const SizedBox(height: 20,),
                   Container(
                     padding: const EdgeInsets.only(left: 25, right: 25),
                     child: Row(
                       children: [
-                        Text(
+                        const Text(
                           "ヘルスケア",
                           style: TextStyle(
                             color: Color(0xFF1f2326),
@@ -228,24 +224,24 @@ class _ReportPageState extends State<ReportPage> {
                       ]
                     )
                   ),
-                  SizedBox(height: 10,),
+                  const SizedBox(height: 10,),
                   Container(
                     padding: const EdgeInsets.only(left: 25, right: 25),
                     height: 100,
                     width: width,
                     child: Row(
                       children: [
-                        CircleAvatar(
+                        const CircleAvatar(
                           radius:40,
                           backgroundImage: AssetImage(
                             "img/5.jpg"
                           ),
                         ),
-                        SizedBox(width: 30,),
+                        const SizedBox(width: 30,),
                         Column(
                           mainAxisAlignment: MainAxisAlignment.center,
                           crossAxisAlignment: CrossAxisAlignment.start,
-                          children: [
+                          children: const [
                             Text(
                               "歩数",
                               style: TextStyle(
@@ -265,8 +261,8 @@ class _ReportPageState extends State<ReportPage> {
                             ),
                           ]
                         ),
-                        SizedBox(width: 30,),
-                        Text(
+                        const SizedBox(width: 30,),
+                        const Text(
                           "121",
                           style: TextStyle(
                               color:Colors.black,
@@ -277,7 +273,7 @@ class _ReportPageState extends State<ReportPage> {
                       ],
                     )
                   ),
-                  SizedBox(height: 10,),
+                  const SizedBox(height: 10,),
                   Container(
                       padding: const EdgeInsets.only(left: 25, right: 25),
                       height: 100,
@@ -291,11 +287,11 @@ class _ReportPageState extends State<ReportPage> {
                                 "img/6.png"
                             ),
                           ),
-                          SizedBox(width: 30,),
+                          const SizedBox(width: 30,),
                           Column(
                               mainAxisAlignment: MainAxisAlignment.center,
                               crossAxisAlignment: CrossAxisAlignment.start,
-                              children: [
+                              children: const [
                                 Text(
                                   "移動距離",
                                   style: TextStyle(
@@ -315,8 +311,8 @@ class _ReportPageState extends State<ReportPage> {
                                 ),
                               ]
                           ),
-                          SizedBox(width: 30,),
-                          Text(
+                          const SizedBox(width: 30,),
+                          const Text(
                             "2021 km",
                             style: TextStyle(
                                 color:Colors.black,
@@ -327,7 +323,7 @@ class _ReportPageState extends State<ReportPage> {
                         ],
                       )
                   ),
-                  SizedBox(height: 10,),
+                  const SizedBox(height: 10,),
                 ],
               )
             )
@@ -338,7 +334,7 @@ class _ReportPageState extends State<ReportPage> {
 
 Widget _VerticalList(BuildContext context, List list, double width,
     Color color1, Color color2) {
-  return Container(
+  return SizedBox(
       height: 320,
       child: PageView.builder(
           controller: PageController(viewportFraction: 0.88),
@@ -360,36 +356,34 @@ Widget _VerticalList(BuildContext context, List list, double width,
                 ),
                 child: Column(
                   children: [
-                    Container(
-                        child: Row(
-                          children: [
-                            Text(
-                              list[i]['title'],
-                              style: TextStyle(
-                                  fontSize: 20,
-                                  fontWeight: FontWeight.w500,
-                                  color: Colors.white
-                              ),
-                            ),
-                            Expanded(child: Container())
-                          ],
-                        )
+                    Row(
+                      children: [
+                        Text(
+                          list[i]['title'],
+                          style: const TextStyle(
+                              fontSize: 20,
+                              fontWeight: FontWeight.w500,
+                              color: Colors.white
+                          ),
+                        ),
+                        Expanded(child: Container())
+                      ],
                     ),
-                    SizedBox(height: 10),
-                    Container(
+                    const SizedBox(height: 10),
+                    SizedBox(
                       width: width,
                       child: Text(
                         list[i]['text'],
-                        style: TextStyle(
+                        style: const TextStyle(
                             fontSize: 18,
                             color: Colors.white
                         ),
                       ),
                     ),
-                    SizedBox(height: 5,),
-                    Divider(thickness: 1.0,),
-                    SizedBox(height: 5,),
-                    Container(
+                    const SizedBox(height: 5,),
+                    const Divider(thickness: 1.0,),
+                    const SizedBox(height: 5,),
+                    SizedBox(
 
                       width: 200,
                       height: 150,
