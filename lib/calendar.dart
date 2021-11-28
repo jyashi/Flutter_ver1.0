@@ -2,10 +2,9 @@ import 'package:table_calendar/table_calendar.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
-
-class Calendar extends StatelessWidget{
+class Calendar extends StatelessWidget {
   @override
-  Widget build(BuildContext context){
+  Widget build(BuildContext context) {
     return MaterialApp(
       theme: ThemeData(primaryColor: Colors.white),
       title: 'Calendar',
@@ -15,10 +14,8 @@ class Calendar extends StatelessWidget{
 }
 
 class CalendarPage extends StatefulWidget {
-
   @override
   _CalendarState createState() => _CalendarState();
-
 }
 
 class _CalendarState extends State<CalendarPage> {
@@ -29,39 +26,35 @@ class _CalendarState extends State<CalendarPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: const Text("Calendar"),
-        backgroundColor: const Color(0xFF6c848d),
-      ),
-      body: Container(
-        color: const Color(0xFFefefef),
-        child:Column(
-            children: [
+        appBar: AppBar(
+          title: const Text("Calendar"),
+          backgroundColor: const Color(0xFF6c848d),
+        ),
+        body: Container(
+            color: const Color(0xFFefefef),
+            child: Column(children: [
               TableCalendar(
-                firstDay: DateTime.utc(2020, 1, 1),
-                lastDay: DateTime.utc(2030, 12, 31),
-                calendarStyle: const CalendarStyle(
-                  todayDecoration: BoxDecoration(
-                      color: Color(0xFF418b89),
-                      shape: BoxShape.circle)),
-                focusedDay: _focusedDay,
-                headerStyle: const HeaderStyle(
-                  formatButtonVisible: false,
-                ),
-                selectedDayPredicate: (day) {
-                  return isSameDay(_selectedDay, day);
-                },
-                onDaySelected: (selectedDay, focusedDay) {
-
-                  if (!isSameDay(_selectedDay, selectedDay)) {
-                    setState(() {
-                      _selectedDay = selectedDay;
-                      _focusedDay = focusedDay;
-                    });
-                    Get.toNamed("/report",arguments: _selectedDay);
-                  }
-                }
-              ),
+                  firstDay: DateTime.utc(2020, 1, 1),
+                  lastDay: DateTime.utc(2030, 12, 31),
+                  calendarStyle: const CalendarStyle(
+                      todayDecoration: BoxDecoration(
+                          color: Color(0xFF418b89), shape: BoxShape.circle)),
+                  focusedDay: _focusedDay,
+                  headerStyle: const HeaderStyle(
+                    formatButtonVisible: false,
+                  ),
+                  selectedDayPredicate: (day) {
+                    return isSameDay(_selectedDay, day);
+                  },
+                  onDaySelected: (selectedDay, focusedDay) {
+                    if (!isSameDay(_selectedDay, selectedDay)) {
+                      setState(() {
+                        _selectedDay = selectedDay;
+                        _focusedDay = focusedDay;
+                      });
+                      Get.toNamed("/report", arguments: _selectedDay);
+                    }
+                  }),
               // TextButton(
               //   child: Text("1ページ目に遷移する"),
               //   onPressed: (){
@@ -72,9 +65,6 @@ class _CalendarState extends State<CalendarPage> {
               //     ));
               //   },
               // ),
-            ]
-        )
-      )
-    );
+            ])));
   }
 }
